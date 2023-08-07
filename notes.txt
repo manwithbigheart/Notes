@@ -1,0 +1,14 @@
+// for deploying any react app 
+
+1. $ git install gh-pages --save-deve
+
+2. Edit package.json file
+    i. add "homepage": "https://manwithbigheart.git.io/Notes"
+        on top
+    ii. add 
+        "predeploy":"npm run build"
+        "deploy":"gh-pages -d build"
+        in scripts 
+
+3. $ npm run deploy
+

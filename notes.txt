@@ -1,3 +1,5 @@
+#################################################################
+
 // for deploying any react app 
 
 1. $ git install gh-pages --save-deve
@@ -12,3 +14,39 @@
 
 3. $ npm run deploy
 
+----------------------------------------------------------------
+
+
+
+################################################################
+
+# for colours 
+
+    https://colours.neilorangepeel.com/
+
+# for color palate
+
+    https://coolors.co/
+
+
+
+
+#################################################################
+
+Light more 
+
+1. Gold - #E1A140
+2. Puss - #532200
+3. Sand-doller - #EFCFA0
+4. Burnt Orange - #914110
+
+Dark Mode 
+
+1. Royal Blue - #091235
+2. Navy Blue - #14202E
+3. Midnight Blue - #2B4257
+4. Blue Gray - #88A9C3
+
+
+
+#################################################################

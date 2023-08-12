@@ -1,25 +1,31 @@
-import './Navbar.css'
+import './css/Navbar.css';
+import React from 'react';
+import logo from '../res/logo1.png'
+import SearchIcon from '@mui/icons-material/Search';
 
 function Navbar()
 {
     
     return (
-    <nav class="navbar background">
-        <div class="logo">
-                <img src="res/images.jpeg" alt="logo"/>
-        </div>
-        <h2>Notes</h2>
-        <ul class="nav-list">
-            <li><a href="#Home" >Home</a></li>
-            <li><a href="#Sevices" >Services</a></li>
-            <li><a href="#Contact" >Contact</a></li>
-            <li><a href="#About" >About</a></li>
-        </ul>
+        <React.Fragment>
+            <nav className="navbar background">
+                <div className="logo">
+                        <img src={logo} alt="logo" width={50} height={50}/>
+                </div>
+                <h2>Notes</h2>
+                <ul className="nav-list">
+                    <li><a href="#Home" >Home</a></li>
+                    <li><a href="#Sevices" >Services</a></li>
+                    <li><a href="#Contact" >Contact</a></li>
+                    <li><a href="#About" >About</a></li>
+                </ul>
 
-        <div class="rightNav">
-            <input class="btn btn-sm" placeholder='Search'/>
-            <button class="btn btn_lg">Login</button>
-        </div>
-    </nav>   )
+                <div className="rightNav">
+                    <input className="search search-input" placeholder='Search'/>
+                    <button className="search-btn"><SearchIcon /></button>
+                </div>
+            </nav>
+        </React.Fragment>
+       )
 }
 export default Navbar

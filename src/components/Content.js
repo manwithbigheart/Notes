@@ -26,7 +26,7 @@ function Content(props) {
             </div>
         </div>
 
-        <div className='container2 '>
+        {/* <div className='container2 hidden'>
             
             <div className='image'>
                 <img src={img1}/>
@@ -43,7 +43,7 @@ function Content(props) {
 
                 </div>
             </div>
-        </div>
+        </div> */}
         
     </React.Fragment>
   )

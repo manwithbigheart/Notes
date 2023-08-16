@@ -1,0 +1,139 @@
+.title{
+    background-color: darksalmon;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    /* cursor: pointer; */
+}
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+}
+
+.logo-container{
+    display: flex;
+    align-items: center;
+
+}
+
+.logo{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    /* background: brown; */
+}
+
+
+.logo img{
+    border-radius: 50px;
+}
+
+ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h2{
+    padding-left: 20px;
+    cursor: pointer;
+}
+
+.nav-list{
+    width: 50%;
+    display: flex;
+    align-items: center;
+
+}
+
+.nav-list li{
+    list-style: none;
+    padding: 26px 30px;
+
+}
+.nav-list li a,a{
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+
+}
+
+.nav-list li a:hover{
+    color: darkred;
+    font-weight: 600;
+
+}
+
+.nav-list li a:active{
+    color: blue;
+
+}
+
+.rightNav{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    text-align: right;
+    width: 50%;
+}
+
+#search{
+    padding-left: 0px;
+    margin: 0px;
+    font-size: 18px;
+    border: 2px solid gray;
+    border-radius: 2px;
+    background: transparent;
+}
+
+.background{
+    background-color: darksalmon;
+    /* background: rgba(0, 0, 0, 0.7) url('../res/bg2.jpg'); */
+    background-size: cover;
+    background-blend-mode: darken;
+    
+}
+
+.search{
+    width: 40%;
+    font-weight: bold;
+    margin: 7px;
+    padding: 8px 20px;
+    border: 2px solid white;
+    border-radius: 8px;
+    background-color: transparent ;
+    opacity: 80%;
+}
+
+.search-btn{
+    padding: 3px 4px;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+}
+
+@media only screen and (max-width: 930px) {
+
+    .nav-list{
+        display: none;
+    }
+    #search{
+        width: auto;
+    }
+
+  }

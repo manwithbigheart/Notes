@@ -2,3 +2,25 @@
 body{
     background-color: bisque;
 }
+
+.ChangeSem{
+    display: flex;
+    margin: 10px;
+    background-color: #fff;
+    /* margin-left: 20px; */
+    padding: 0 5%;
+}
+
+.ChangeSem a{
+    margin: 10px;
+    padding:  8px 15px;
+    border: 1px solid gray;
+    border-radius: 20px;
+}
+
+
+
+.ChangeSem:first-child, .ChangeSem a:active {
+    color: white;
+    background-color: rgb(196, 201, 204);
+}

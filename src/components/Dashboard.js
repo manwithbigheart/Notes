@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import './css/Dashboard.css';
 import Content from './Content';
 import Notes from './Notes';
+import NptelAss from './NptelAss';
 import img1 from '../res/logo.png';
 import dbms from '../res/dbms.png';
 import toc from '../res/toc.png';
@@ -12,40 +13,6 @@ import bc from '../res/bc.png';
 import AddUnit from './AddUnit';
 import { selectClasses } from '@mui/material';
 
-
-
-
-// const title1 = "Notes";
-// const title2 = "Assignment";
-// const list1 = ['Semester 5',"Semester 6"]
-// const list2 = ['Semester 5','Semester 6']
-
-
-
-// const subjects_5 = {
-//   'Database Management System' : ['Unit 1','Unit 2','Unit 3','Unit 4','Unit 5'],
-//   'Theory of Computation': ['Unit 1','Unit 2','Unit 3','Unit 4','Unit 5'],
-//   'Software Engineering' : ['Unit 1','Unit 2','Unit 3','Unit 4','Unit 5'],
-//   'Human Computer Intraction' : ['Unit 1','Unit 2','Unit 3','Unit 4','Unit 5'],
-//   'Business Communication' : ['Unit 1','Unit 2','Unit 3','Unit 4','Unit 5'],
-// }
-
-// // const topics = ['Notes','Assignments','Practicals','NPTEL']
-
-// const data = {
-//   'Notes' : subjects_5,
-//   'Assignments' : subjects_5,
-//   'Practicals' : subjects_5,
-//   'NPTEL' : subjects_5
-// }
-
-
-// const obj1 = list1.map((item,i)=>(
-//   {
-//       id : i,
-//       title : item
-//   }
-// ))
 
 
 function Dashboard() {
@@ -133,7 +100,14 @@ function Dashboard() {
 
       {/* <AddUnit setData={setData}/> */}
 
+      <div className='ChangeSem active'>
+        <a href='#'>Semester 5</a>
+        <a href='#'>Semester 6</a>
+      </div>
+
       <Notes data = {data}/>
+
+      <NptelAss />
       {/* <Notes data = {data} subjects_5 = {subjects_5}/> */}
 
       {/* <Content title1={title1} title2={title2} list1={obj1} list2={list2}/>

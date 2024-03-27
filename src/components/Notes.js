@@ -3,27 +3,12 @@ import './css/Notes.css';
 import { useState } from 'react';
 import img1 from '../res/logo.png';
 
-// const title1 = "Notes";
-// const title2 = "Assignment";
-// const list1 = ['Semester 5',"Semester 6"]
-// const list2 = ['Semester 5','Semester 6']
-
-// const obj1 = list1.map((item,i)=>(
-//     {
-//         id : i,
-//         title : item
-//     }
-//   ))
   
 function Notes(props) {
 
   const data = props.data;
-  // var isFirst = true;
 
-  // const { data } = useData();
-      
-  const [isOpen1, setIsOpen1] = useState(false);
-  const [isFirst, setFirst] = useState(false);
+  
   const [isOpenTopics, setIsOpenTopics] = useState({});
 
   
@@ -34,6 +19,7 @@ function Notes(props) {
     }));
   };
 
+  
   // addUnit('Notes', 'Subject 1', 'Unit 1');
   // addUnit('Notes', 'Subject 1', 'Unit 2');
   // addUnit('Notes', 'Subject 2', 'Unit 1');
@@ -47,7 +33,7 @@ function Notes(props) {
         {/* Render the topic toggle dropdowns */}
         {Object.keys(data).map((topic) => (
         <div className='dropdown' key={topic}>
-          <button onClick={() => toggleTopicDropdown(topic)}>{topic}</button>
+          <button className={props.dropdown_btn} onClick={() => toggleTopicDropdown(topic)}>{topic}</button>
           {isOpenTopics[topic] && (
             <>
               {Object.keys(data[topic]['Subjects']).map((subject, index) => (

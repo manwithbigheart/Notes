@@ -1,6 +1,7 @@
 
 import React, { useState } from 'react';
 import './css/Dashboard.css';
+import './css/Notes.css';
 import Content from './Content';
 import Notes from './Notes';
 import NptelAss from './NptelAss';
@@ -10,12 +11,39 @@ import toc from '../res/toc.png';
 import se from '../res/se.png';
 import hci from '../res/hci.png';
 import bc from '../res/bc.png';
+import img from '../res/ales-nesetril-Im7lZjxeLhg-unsplash (2).jpg'
 import AddUnit from './AddUnit';
 import { selectClasses } from '@mui/material';
 
 
 
 function Dashboard() {
+
+  const [selectedBtn, setSelectedBtn] = useState(null);
+
+  const [notes, setNotes] = useState(false);
+  const [dashboard, setDashboard] = useState(true);
+
+  
+  const btnClicked = (category) => {
+    setSelectedBtn(category);
+  };
+
+
+
+  const notesBtn = () => {
+    setNotes(true);
+    setDashboard(false); // Hide the other component
+    // btnClicked('button1');
+    setSelectedBtn('button1');
+  };
+
+  const dashboardBtn = () => {
+    setNotes(true);
+    setDashboard(false); // Hide the other component
+  };
+
+
 
   const [data, setData] = useState({
     Notes: {
@@ -92,26 +120,111 @@ function Dashboard() {
       }
     }
   });
+
+  const [data1, setData1] = useState({
+    Dashboard: {
+      Subjects: {
+        "Notes": {
+          Units: {
+            "Semester 5": '#',
+            "Semester 6": '#'
+          },
+          Image: img
+        },
+        "Assignments": {
+          Units: {
+            "Semester 5": '#',
+            "Semester 6": '#'
+          },
+          Image: img
+        },
+        "Practicals": {
+          Units: {
+            "Semester 5": '#',
+            "Semester 6": '#'
+          },
+          Image: img
+        },
+        "NPTEL": {
+          Units: {
+            "Semester 5": '#',
+            "Semester 6": '#'
+          },
+          Image: img
+        }
+      }
+    }
+  })
   
   
   
   return (
     <React.Fragment>
 
-      {/* <AddUnit setData={setData}/> */}
-
       <div className='ChangeSem active'>
-        <a href='#'>Semester 5</a>
-        <a href='#'>Semester 6</a>
+        <button className={`changeSem-btn  ${selectedBtn === 'button1' ? 'selected' : ''}`}
+        onClick={notesBtn}>Semester 5</button>
+        <button className={`changeSem-btn  ${selectedBtn === 'button2' ? 'selected' : ''}`}
+        onClick={() => btnClicked('button2')}>Semester 6</button>
+
       </div>
 
-      <Notes data = {data}/>
+
+      {notes && <Notes data = {data}/>}
+
+      {dashboard && <>
+        {Object.keys(data1).map((topic) => (
+        <>
+          {data1[topic]?.Subjects && Object.keys(data1[topic]['Subjects']).map((subject, index) => (
+            <>
+              <div className={index % 2 === 0 ? 'container1' : 'container1 hidden'} key={subject}>
+                <div className='content'>
+                  <div className='title'>
+                    <h3>{subject}</h3>
+                  </div>
+                  <div className='links-container'>
+                    <div className='links'>
+                      {Object.keys(data1[topic]['Subjects'][subject]['Units']).map((unit, index) => (
+                        <a target='_blank' key={index} href={data1[topic]['Subjects'][subject]['Units'][unit]}>
+                          {unit}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+                <div className='image'>
+                  <img src={data1[topic]['Subjects'][subject]['Image']} alt={`Image for ${subject}`} />
+                </div>
+              </div>
+              <div className={index % 2 === 0 ? 'container1 hidden' : 'container1'} key={subject}>
+                <div className='image'>
+                  <img src={data1[topic]['Subjects'][subject]['Image']} alt={`Image for ${subject}`} />
+                </div>
+                <div className='content'>
+                  <div className='title'>
+                    <h3>{subject}</h3>
+                  </div>
+                  <div className='links-container'>
+                    <div className='links'>
+                      {Object.keys(data1[topic]['Subjects'][subject]['Units']).map((unit, index) => (
+                        <a target='_blank' key={index} href={data1[topic]['Subjects'][subject]['Units'][unit]}>
+                          {unit}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </>
+          ))}
+        </>
+      ))}
+    </>}
+
+
 
       <NptelAss />
-      {/* <Notes data = {data} subjects_5 = {subjects_5}/> */}
 
-      {/* <Content title1={title1} title2={title2} list1={obj1} list2={list2}/>
-      <Content title1={title1} title2={title2} list1={obj1} list2={list2}/> */}
     </React.Fragment>
   )
 }

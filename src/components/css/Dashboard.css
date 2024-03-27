@@ -1,6 +1,8 @@
 
 body{
-    background-color: bisque;
+    /* background-color: bisque; */
+    background: linear-gradient(#e66465, #9198e5);
+    background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
 }
 
 .ChangeSem{
@@ -11,16 +13,26 @@ body{
     padding: 0 5%;
 }
 
-.ChangeSem a{
+.ChangeSem button{
     margin: 10px;
     padding:  8px 15px;
     border: 1px solid gray;
     border-radius: 20px;
+    outline: none;
 }
 
-
+.changeSem-btn.selected{
+    background-color: #007bff;
+    color: #fff;
+    outline: none;
+}
 
 .ChangeSem:first-child, .ChangeSem a:active {
     color: white;
     background-color: rgb(196, 201, 204);
+}
+
+button:hover{
+    background-color: skyblue;
+    cursor: pointer;
 }
